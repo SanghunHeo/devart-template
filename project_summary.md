@@ -1,33 +1,38 @@
-# Project Title
-Insert the name of your project
+# Sandbox Ocean 2.0
 
 ## Authors
-- Insert main author name, surname, github account
-- Insert other author(s) name, surname, github account (one per list element)
+- Sanghun Heo  https://github.com/SanghunHeo
+- Wansup Choi
 
 ## Description
-Insert a description containing about 100 to 150 words, including your motivation and the meaning behind your idea and execution. The Judges will be keen to know how your idea pushes the boundaries of code and technology. 
+This project is upgrade version of sandbox ocean 2011. Main goal of new version is to expend experience of sandbox ocean to world with chrome web apps. below is description about early version.
 
-## Link to Prototype
-NOTE: If your project lives online you can add one or more links here. Make sure you have a stable version of your project running before linking it.
+“Sandbox Ocean” is a multi-user interactive installation. Users collaborate in creating a dynamic and animated world by changing and shaping the topography of a sandbox. The interface is simple, intuitive and playful. Customizing Microsoft’s Kinect system, our project adds a new-media dimension to the playful sandbox of our childhood. “Sandbox Ocean” is an environment for collaborative creative play. The malleable sand interface fosters an activity that emphasizes mutual and collaborative play rather than competition. The physical interaction is intended to bring digital media back from the mediated world of the computer screen into the realm of tangible experience.
 
-[Example Link](http://www.google.com "Example Link")
-
-## Example Code
-NOTE: Wrap your code blocks or any code citation by using ``` like the example below.
-```
-function test() {
-  console.log("Printing a test");
-}
-```
-## Links to External Libraries
- NOTE: You can also use this space to link to external libraries or Github repositories you used on your project.
-
-[Example Link](http://www.google.com "Example Link")
 
 ## Images & Videos
 NOTE: For additional images you can either use a relative link to an image on this repo or an absolute link to an externally hosted image.
+[![ScreenShot](project_images/early version/video_screen_shot.png?raw=true)](http://vimeo.com/34409128)
 
-![Example Image](project_images/cover.jpg?raw=true "Example Image")
+![Image of sandbox ocean](project_images/early version/3.jpg?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/early version/4.jpg?raw=true "Image of sandbox ocean")
 
-https://www.youtube.com/watch?v=30yGOxJJ2PQ
+![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_02059.jpg?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_02761.png?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_03197.jpg?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_04145.jpg?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/early version/6.jpg?raw=true "Image of sandbox ocean")
+
+## Wrapping html&javascript code with Chrome Apps
+still working...
+```
+function working() {
+  console.log("Working very hard please wait...");
+}
+```
+
+## Links to External Libraries
+  kinect driver code
+[libfreenect](https://github.com/OpenKinect/libfreenect "libfreenect github")
+  send kinect data to browser
+[sstephenson's Kinect playground](https://github.com/sstephenson/kinect "sstephenson's Kinect playground github")  
