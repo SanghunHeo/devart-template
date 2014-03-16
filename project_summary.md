@@ -2,7 +2,7 @@
 
 ## Authors
 - Sanghun Heo  https://github.com/SanghunHeo
-- Wansup Choi
+- Wansup Choi  https://github.com/toonation/
 
 ## Description
 This project is upgrade version of sandbox ocean 2011. Main goal of new version is to expend experience of sandbox ocean to world with chrome web apps. below is description about early version.
