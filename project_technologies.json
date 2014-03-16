@@ -1,16 +1,23 @@
 {
     "technologies": {
+        "languages": [
+            "javascript",
+            "html5",
+            "webGL"
+        ],
         "apis": [
             "insert apis"
         ],
         "platforms": [
-            "insert platforms"
+            "Chrome Apps"
         ],
         "toolkits": [
-            "insert toolkits"
+            "kinect",
+            "nodejs",
+            "jquery"
         ]
     },
     "themes": [
-        "insert themes"
+        "visualization"
     ]
 }
