@@ -144,7 +144,7 @@ var setupWebGL = function(canvas, opt_attribs) {
     showLink(GET_A_WEBGL_BROWSER);
     return null;
   }
-
+  
   var context = create3DContext(canvas, opt_attribs);
   if (!context) {
     showLink(OTHER_PROBLEM);
@@ -164,7 +164,8 @@ var create3DContext = function(canvas, opt_attribs) {
   for (var ii = 0; ii < names.length; ++ii) {
     try {
       context = canvas.getContext(names[ii], opt_attribs);
-    } catch(e) {}
+    } catch(e) {
+    }
     if (context) {
       break;
     }
@@ -190,10 +191,10 @@ var getWebGLContext = function(canvas, opt_attribs) {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
   } else {
-    var title = document.title;
-    var h1 = document.createElement("h1");
-    h1.innerText = title;
-    document.body.insertBefore(h1, document.body.children[0]);
+    // var title = document.title;
+    // var h1 = document.createElement("h1");
+    // h1.innerText = title;
+    // document.body.insertBefore(h1, document.body.children[0]);
   }
 
   var gl = setupWebGL(canvas, opt_attribs);
