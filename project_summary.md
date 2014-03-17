@@ -11,7 +11,7 @@ This project is upgrade version of sandbox ocean 2011. Main goal of new version 
 
 
 ## Images & Videos
-NOTE: For additional images you can either use a relative link to an image on this repo or an absolute link to an externally hosted image.
+
 [![ScreenShot](project_images/early version/video_screen_shot.png?raw=true)](http://vimeo.com/34409128)
 
 ![Image of sandbox ocean](project_images/early version/3.jpg?raw=true "Image of sandbox ocean")
