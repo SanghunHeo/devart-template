@@ -1,5 +1,6 @@
 (function($) {
     var stage;
+    var fishs = [fish01_instance_1,fish02_instance_1,fish03_instance_1,fish04_instance_1,fish05_instance_1];
     var initalize = function() {
         stage = new createjs.Stage("stage");
         window.stage = stage;
@@ -15,27 +16,27 @@
     var make = function() {
         var size = 1;
 
-        var view = new fish01_instance_1();
+        var view = new fishs[0]();
         view.setTransform(0, 0, -size, size);
         window.fish = new Fish(view);
         fish.birth()
         
-        var view2 = new fish02_instance_1();
+        var view2 = new fishs[1]();
         view2.setTransform(0, 0, -size, size);
         var fish2 = new Fish(view2);
         fish2.birth();
 
-        var view3 = new fish03_instance_1();
+        var view3 = new fishs[2]();
         view3.setTransform(0, 0, -size, size);
         var fish3 = new Fish(view3);
         fish3.birth();
 
-         var view4 = new fish04_instance_1();
+         var view4 = new fishs[3]();
         view4.setTransform(0, 0, -size, size);
         var fish4 = new Fish(view4);
         fish4.birth();
 
-         var view5 = new fish05_instance_1();
+         var view5 = new fishs[4]();
         view5.setTransform(0, 0, -size, size);
         var fish5 = new Fish(view5);
         fish5.birth();

@@ -13,8 +13,8 @@
       this.birth = __bind(this.birth, this);
       this.pX = this.view.x;
       this.pY = this.view.y;
-      this.rotationSpeed = .03;
-      this.followSpeed = .01;
+      this.rotationSpeed = .2;
+      this.followSpeed = .02;
       this.life = false;
       this.leader = new Leader(this.view.x, this.view.y);
       createjs.Ticker.addEventListener("tick", this.loop);
@@ -49,9 +49,20 @@
       diff_Y = this.pY - this.view.y;
       start = this.view.rotation;
       end = Math.atan2(diff_Y, diff_X) * (180 / Math.PI);
-      end %= 360;
       diff_R = end - start;
+      if (diff_R < -180) {
+        diff_R += 360;
+      }
+      if (diff_R > 180) {
+        diff_R -= 360;
+      }
       this.view.rotation += diff_R * this.rotationSpeed;
+      if (this.view.rotation > 180) {
+        this.view.rotation -= 360;
+      }
+      if (this.view.rotation < -180) {
+        this.view.rotation += 360;
+      }
       this.pX = this.view.x;
       return this.pY = this.view.y;
     };
