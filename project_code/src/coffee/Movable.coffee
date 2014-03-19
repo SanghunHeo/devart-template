@@ -1,11 +1,12 @@
 class Movable
-	constructor:(@view) ->
+	constructor:(@parent) ->
+		@view = @parent.view
 		@pX = @view.x
 		@pY = @view.y
 		@rotationSpeed = .2
 		@followSpeed = .02
 		@life = false
-		@leader = new Leader(@view.x,@view.y)
+		@leader = new Leader(@parent)
 		createjs.Ticker.addEventListener("tick", @loop);
 		@birth()
 

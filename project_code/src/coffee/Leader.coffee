@@ -1,35 +1,43 @@
 class Leader
-	constructor:(@startX,@startY,@canvas)->
+	constructor:(@parent)->
+		@startX = @parent.view.x
+		@startY = @parent.view.y
+		
 		@delayDefault = 1000
 		@location = new Point(@startX,@startY)
 		@nextLocation = new Point(@startX,@startY);
 		@startInterval()
-		@shape = new createjs.Shape()
-		@shape.graphics.beginFill("#ff0000").drawRect(-2, -2, 4, 4);
-		stage.addChild(@shape)
-		# var shape = new createjs.Shape();
- 	# 	shape.graphics.beginFill("#ff0000").drawRect(0, 0, 100, 100);
-
+		# @shape = new createjs.Shape()
+		# @shape.graphics.beginFill("#ff0000").drawRect(-2, -2, 4, 4);
+		# stage.addChild(@shape)
+		
 	interval:()=>
 		@findSafeLocation()
 		@location.x = @nextLocation.x
 		@location.y = @nextLocation.y
-		@shape.x = @location.x
-		@shape.y = @location.y
+		# @shape.x = @location.x
+		# @shape.y = @location.y
 		@startInterval()
 		
 	startInterval:()=>
-		setTimeout(@interval, Math.random() * 3000 + 3500)
+		setTimeout(@interval, Math.random() * 3000 + 1500)
 
 	findSafeLocation:()=>
-		if(@isSafe())
-			@nextLocation.x = Math.random() * stage.canvas.width;
-			@nextLocation.y = Math.random() * stage.canvas.height;
+		@nextLocation.x = @.parent.view.x + Math.random() * 200 - 100
+		@nextLocation.y = @.parent.view.y + Math.random() * 200 - 100
+		if(@isSafe(@nextLocation.x,@nextLocation.y) || @try > 10)
+			@try = 0
+			@nextLocation
 		else 
+			@try++
 			@findSafeLocation()
 	
-	isSafe:()=>
-		if Math.random() > .5 then return true
-		else return false
+	isSafe:(x,y)=>
+		result = window.depth.getDepthLevelToDOA(x,y,@parent.config)
+		if(result == "between")
+			return true
+		else 
+			return false
+		
 
 window.Leader = Leader

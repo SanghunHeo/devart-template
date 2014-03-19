@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "SpriteFactory.js",
+  "sourceRoot": "../../coffee/controller",
+  "sources": [
+    "SpriteFactory.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA,OAAA;;CAAA,CAAM;CACL,OAAA,SAAA;;CAAA;;CAAA,EAAW,CAAX,IAAA;;CAAA,GAEM;CACL;;CAAA,CAAA,CAAc,GAAd,CAAC,GAAD;;CAAA,CACW,CAAA,MAAC,CAAZ;CACC,GAAuB,IAAvB,mBAAA;AAAA,CAAA,CAAgB,CAAhB,CAAK,MAAW,OAAhB;UADU;CADX,MACW;;CADX;;CAHD;;CAAA,EAMA,CAAA,KAAK,IAAJ;AACY,CAAA,EAAZ;CAPD,IAMK;;CANL;;CADD;;CAAA,CAUA,CAAuB,GAAjB,OAAN;CAVA"
+}

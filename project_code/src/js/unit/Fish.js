@@ -4,21 +4,53 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Fish = (function() {
-    function Fish(view) {
-      this.view = view;
+    function Fish(config) {
+      var bound;
+
+      this.config = config;
       this.death = __bind(this.death, this);
       this.birth = __bind(this.birth, this);
-      this.movable = new Movable(this.view);
+      this.spriteFactory = SpriteFactory.get();
+      this.view = this.spriteFactory.makeSprite(this.config.view.id);
+      bound = this.view.getBounds();
+      this.view.regX = bound.width * 2 / 3;
+      this.view.regY = bound.height / 2;
+      this.view.setTransform(0, 0, -this.config.scale.xy, this.config.scale.xy);
+      this.view.x = this.config.position.x;
+      this.view.y = this.config.position.y;
+      this.movable = new Movable(this);
+      this.locationChecker = new LocationChecker(this);
+      $(this.locationChecker).on("over", this.death);
+      $(this.locationChecker).on("under", this.death);
     }
 
     Fish.prototype.birth = function() {
+      var _this = this;
+
+      this.life = 1;
       this.movable.birth();
-      return stage.addChild(this.view);
+      this.view.alpha = 0;
+      stage.addChild(this.view);
+      TweenMax.to(this.view, 1, {
+        alpha: 1,
+        onUpdate: function(e) {},
+        onComplete: function(e) {}
+      });
+      return this;
     };
 
     Fish.prototype.death = function() {
+      var _this = this;
+
+      this.life = 0;
       this.movable.death();
-      return stage.removeChild(this.view);
+      TweenMax.to(this.view, 1, {
+        alpha: 0,
+        onComplete: function() {
+          return stage.removeChild(_this.view);
+        }
+      });
+      return this;
     };
 
     return Fish;
@@ -28,3 +60,7 @@
   window.Fish = Fish;
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=Fish.map
+*/

@@ -4,19 +4,20 @@
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Movable = (function() {
-    function Movable(view) {
-      this.view = view;
+    function Movable(parent) {
+      this.parent = parent;
       this.setRotation = __bind(this.setRotation, this);
       this.follow = __bind(this.follow, this);
       this.loop = __bind(this.loop, this);
       this.death = __bind(this.death, this);
       this.birth = __bind(this.birth, this);
+      this.view = this.parent.view;
       this.pX = this.view.x;
       this.pY = this.view.y;
       this.rotationSpeed = .2;
       this.followSpeed = .02;
       this.life = false;
-      this.leader = new Leader(this.view.x, this.view.y);
+      this.leader = new Leader(this.parent);
       createjs.Ticker.addEventListener("tick", this.loop);
       this.birth();
     }
@@ -74,3 +75,7 @@
   window.Movable = Movable;
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=Movable.map
+*/

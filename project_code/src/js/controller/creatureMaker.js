@@ -5,12 +5,56 @@
 
   creatureMaker = (function() {
     function creatureMaker(view) {
+      var beachCreature, defalult, landCreature, seaCreature;
+
       this.view = view;
+      this.getCreatureListOnLocation = __bind(this.getCreatureListOnLocation, this);
       this.make = __bind(this.make, this);
+      defalult = new DefaultUnitConfig();
+      seaCreature = this.clone(defalult);
+      beachCreature = this.clone(defalult);
+      landCreature = this.clone(defalult);
+      this.creatureList = [];
     }
 
     creatureMaker.prototype.make = function(location) {
       this.location = location;
+    };
+
+    creatureMaker.prototype.getCreatureListOnLocation = function(location) {
+      this.location = location;
+    };
+
+    creatureMaker.prototype.clone = function(obj) {
+      var flags, key, newInstance;
+
+      if ((obj == null) || typeof obj !== 'object') {
+        return obj;
+      }
+      if (obj instanceof Date) {
+        return new Date(obj.getTime());
+      }
+      if (obj instanceof RegExp) {
+        flags = '';
+        if (obj.global != null) {
+          flags += 'g';
+        }
+        if (obj.ignoreCase != null) {
+          flags += 'i';
+        }
+        if (obj.multiline != null) {
+          flags += 'm';
+        }
+        if (obj.sticky != null) {
+          flags += 'y';
+        }
+        return new RegExp(obj.source, flags);
+      }
+      newInstance = new obj.constructor();
+      for (key in obj) {
+        newInstance[key] = clone(obj[key]);
+      }
+      return newInstance;
     };
 
     return creatureMaker;
@@ -18,3 +62,7 @@
   })();
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=creatureMaker.map
+*/
