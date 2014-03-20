@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "Point.js",
+  "sourceRoot": "../../coffee/sandboxocean",
+  "sources": [
+    "Point.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,IAAA,CAAA;;CAAA,CAAM;CACO,CAAK,CAAL,CAAA,WAAE;CAAM,EAAN,CAAA,EAAD;CAAO,EAAH,CAAA,EAAD;CAAhB,IAAY;;CAAZ;;CADD;;CAAA,CAGA,CAAe,EAAf,CAAM;CAHN"
+}
