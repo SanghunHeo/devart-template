@@ -40,6 +40,8 @@
         '<script src="js/shader/shader-main.js"></script>' +
         
     	'<script src="js/plugins.js"></script>'+
-    	'<script src="js/main.js"></script>';
+        '<script src="js/main.js"></script>'+
+        ''+
+    	'<script src="js/socket/socket.js"></script>';
     document.write(element);
 }());

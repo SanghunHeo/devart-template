@@ -26,9 +26,10 @@ function main() {
     image.src = "img/grayscale_map.png"; // MUST BE SAME DOMAIN!!!
 
     image.onload = function() {
+        render();
         (function animloop() {
-            requestAnimFrame(animloop);
-            render();
+            // requestAnimFrame(animloop);
+             // render();
         })();
     }
 }
