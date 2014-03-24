@@ -1,0 +1,19 @@
+*{color:white;}
+.main-row-01{ background: url("../img/main/bg-01.png") repeat fixed 50% 0px;height: 930px;}
+.main-row-02{ background: url("../img/main/bg-02.png") repeat fixed 50% 0px;height: 590px;}
+.main-row-03{ background: RGB(34, 35, 43) repeat fixed 50% 0px;height: 1000px;}
+
+.main-logo{width: 228px;height:114px;background:url("../img/common/sandboxocean-logo.png");margin-left: -40px;margin-top: -20px}
+.main-row-inner{width: 945px;margin: 0 auto;}
+.main-row-01 .main-row-inner{padding-top: 70px;}
+.main-row-02 .main-row-inner{padding-top: 90px;}
+.main-row-03 .main-row-inner{padding-top: 90px;}
+
+.main-row-01 .main-row-inner .row:nth-child(1){margin-bottom: 180px;}
+.main-description p{font-size: .8em;line-height:1.5em;-webkit-column-count:2; /* Chrome, Safari, Opera */-moz-column-count:2; /* Firefox */column-count:2;}
+
+footer{background: black;}
+footer .main-row-inner{height: 35px;}
+footer p{color: grey;font-size: .8em;padding-top: 11px;}
+
+#slide1{width: 700px;height: 400px;overflow: hidden;}

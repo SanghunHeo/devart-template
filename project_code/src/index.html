@@ -1,87 +1,131 @@
-<!-- Licensed under a BSD license. See license.html for license -->
 <!DOCTYPE html>
-<html>
+<html lang="kr">
 
 <head>
     <meta charset="utf-8">
-    <title>Sandbox Ocean</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="socket.io-client/dist/socket.io.min.js"></script>
-    <!-- vertex shader -->
-    <script id="2d-vertex-shader" type="x-shader/x-vertex">
-        attribute vec2 a_position;
-        attribute vec2 a_texCoord;
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sandbox Ocean 2.0</title>
 
-        uniform vec2 u_resolution;
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
-        varying vec2 v_texCoord;
-
-        void main() {
-            // convert the rectangle from pixels to 0.0 to 1.0
-            vec2 zeroToOne = a_position / u_resolution;
-
-            // convert from 0->1 to 0->2
-            vec2 zeroToTwo = zeroToOne * 2.0;
-
-            // convert from 0->2 to -1->+1 (clipspace)
-            vec2 clipSpace = zeroToTwo - 1.0;
-
-            gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
-
-            // pass the texCoord to the fragment shader
-            // The GPU will interpolate this value between points.
-            v_texCoord = a_texCoord;
-        }
-    </script>
-    </script>
-    <!-- fragment shader -->
-    <script id="2d-fragment-shader" type="x-shader/x-fragment">
-        precision mediump float;
-
-        // our texture
-        uniform sampler2D u_image;
-
-        // the texCoords passed in from the vertex shader.
-        varying vec2 v_texCoord;
-        vec4 color1 = vec4(0.2627450980392157, 0.4666666666666667, 0.08235294117647059, 1.0);
-        vec4 color2 = vec4(0.6039215686274509, 0.6745098039215687, 0.2235294117647059, 1.0);
-        vec4 color3 = vec4(0.8, 0.807843137254902, 0.47843137254901963, 1.0);
-        vec4 color4 = vec4(1.0, 1.0, 1.0, 1.0);
-        vec4 color5 = vec4(0.39215686274509803, 0.788235294117647, 1.0, 1.0);
-        vec4 color6 = vec4(0.23921568627450981, 0.6039215686274509, 0.7176470588235294, 1.0);
-        vec4 color7 = vec4(0, 0.41568627450980394, 0.5803921568627451, 1.0);
-
-        float height1 = .1;
-        float height2 = .2;
-        float height3 = .4;
-        float height4 = .5;
-        float height5 = .6;
-        float height6 = .8;
-        float height7 = 1.0;
-
-        void main() {
-            vec4 origin = texture2D(u_image, v_texCoord);
-            float height = origin[0];
-
-            if (height < height1) gl_FragColor = color1;
-            else if (height >= height1 && height < height2) gl_FragColor = color2;
-            else if (height >= height2 && height < height3) gl_FragColor = color3;
-            else if (height >= height3 && height < height4) gl_FragColor = color4;
-            else if (height >= height4 && height < height5) gl_FragColor = color5;
-            else if (height >= height5 && height < height6) gl_FragColor = color6;
-            else if (height >= height6 && height <= height7) gl_FragColor = color7;
-
-        }
-    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
-<body style="">
-    <div="wrapper" style="width:1024px;height:768px;position:absolute;overflow:hidden;background:black;left:50%;margin-left:-512px;">
-        <canvas id="canvas" width="1024" height="768" style="position:absolute;top:0px;left:0px;-webkit-filter: blur(20px);"></canvas>
-        <canvas id="stage" width="1024" height="768" style="position:absolute;top:0px;left:0px"></canvas>
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row main-row-01">
+            <div class="main-row-inner">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="main-logo"></div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="main-description">
+                            <p>
+                                This project is upgrade version of sandbox ocean 2011. Main goal of new version is to expend experience of sandbox ocean to world with chrome web apps.</br>
+                                </br>
+                                “Sandbox Ocean” is a multi-user interactive installation. Users collaborate in creating a dynamic and animated world by changing and shaping the topography of a sandbox. The interface is simple, intuitive and playful. Customizing Microsoft’s Kinect system, our project adds</br>
+                                a new-media dimension to the playful sandbox of our childhood. “Sandbox Ocean” is an environment for collaborative creative play. The malleable sand interface fosters an activity that emphasizes mutual and collaborative play rather thvan competition. The physical interaction is intended to bring digital media back from the mediated world of the computer screen into the realm of tangible experience.</br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3>VIDEO</h3>
+                    </div>
+                    <div class="col-md-9">
+                        <iframe src="//player.vimeo.com/video/34409128" width="700" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row main-row-02">
+            <div class="main-row-inner">
+                <div class="col-md-3">
+                    <h3>FEATURES</h3>
+                </div>
+                <div class="col-md-9">
+                    <div id="slide1">
+                        <img src="img/main/features_img1.png">
+                        <img src="img/main/features_img2.png">
+                        <img src="img/main/features_img3.png">
+                        <img src="img/main/features_img4.png">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row main-row-03">
+            <div class="main-row-inner">
+                <div class="col-md-3">
+                    <h3>
+                        TECHNICAL</br>
+                        REQUIREMENTS
+                    </h3>
+                </div>
+                <div class="col-md-9">
+                    <div id="slides2">
+                        <img src="img/main/technical_img.png">
+                        <img src="img/main/technical_img.png">
+                        <img src="img/main/technical_img.png">
+                        <img src="img/main/technical_img.png">
+                        <img src="img/main/technical_img.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="row">
+            <div class="main-row-inner">
+                <p>Created by Sanghun Heo Wansup Choi</p>
+            </div>
+        </footer>
     </div>
-    <script src="js/include.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/vendor/jquery.slides.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+        $("#slides1").slidesjs({
+            width: 700,
+            height: 400,
+            pagination: {
+                active: true,
+                // [boolean] Create pagination items.
+                // You cannot use your own pagination. Sorry.
+                effect: "slide",
+                // [string] Can be either "slide" or "fade".
+                interval: 1000,
+                auto: true
+            },
+            navigation: {
+                active: true,
+                // [boolean] Generates next and previous buttons.
+                // You can set to false and use your own buttons.
+                // User defined buttons must have the following:
+                // previous button: class="slidesjs-previous slidesjs-navigation"
+                // next button: class="slidesjs-next slidesjs-navigation"
+                effect: "slide"
+                // [string] Can be either "slide" or "fade".
+            }
+
+        });
+    });
+    </script>
 </body>
-</body>
+
 </html>
