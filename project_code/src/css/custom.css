@@ -16,4 +16,5 @@ footer{background: black;}
 footer .main-row-inner{height: 35px;}
 footer p{color: grey;font-size: .8em;padding-top: 11px;}
 
-#slide1{width: 700px;height: 400px;overflow: hidden;}
+#slides{display: none;}
+#slides2{}
