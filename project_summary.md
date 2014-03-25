@@ -5,7 +5,10 @@
 - Wansup Choi  https://github.com/toonation/
 
 ## Description
-This project is upgrade version of sandbox ocean 2011. Main goal of new version is to expend experience of sandbox ocean to world with chrome web apps. below is description about early version.
+This project is upgrade version of sandbox ocean 2011. Main goal of new version is to expend experience of sandbox ocean to world with chrome web apps. Because of it will running on the modern web browser, anybody who have kinect and willing to experience it would make it real. Even people who don't have appropriate device, can experience sandbox ocean using mouse and keyboard. Furthermore we add "Big dive in" mode which is represent world of deep waters. It can provide 
+
+
+below is description about early version.
 
 “Sandbox Ocean” is a multi-user interactive installation. Users collaborate in creating a dynamic and animated world by changing and shaping the topography of a sandbox. The interface is simple, intuitive and playful. Customizing Microsoft’s Kinect system, our project adds a new-media dimension to the playful sandbox of our childhood. “Sandbox Ocean” is an environment for collaborative creative play. The malleable sand interface fosters an activity that emphasizes mutual and collaborative play rather than competition. The physical interaction is intended to bring digital media back from the mediated world of the computer screen into the realm of tangible experience.
 
