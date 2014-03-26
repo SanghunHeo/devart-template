@@ -7,13 +7,11 @@ class creatureMaker
 			if window.depth.getDepthLevelToDOA(x,y, item.data) is "between"
 				list.push(item.data)
 		num = parseInt list.length * Math.random()
-		name = list[num].view.name
-		new Creature(name,x,y).birth()
-
+		name = list?[num]?.view?.name
+		if name? then new Creature(name,x,y).birth()
 
 	getCreatureListOnLocation:(@location)=>
 		
-
 	clone:(obj) ->
 		if not obj? or typeof obj isnt 'object'
 			return obj

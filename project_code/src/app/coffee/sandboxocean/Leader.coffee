@@ -1,7 +1,7 @@
 class Leader
 	constructor:(@parent)->
-		@startX = @parent.view.x
-		@startY = @parent.view.y
+		@startX = @parent.view.x + Math.random()-.5
+		@startY = @parent.view.y + Math.random()-.5
 		
 		@delayDefault = 1000
 		@location = new Point(@startX,@startY)

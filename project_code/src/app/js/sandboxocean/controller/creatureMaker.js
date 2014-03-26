@@ -10,7 +10,7 @@
     }
 
     creatureMaker.prototype.make = function(x, y) {
-      var i, item, list, name, num, _i, _len, _ref;
+      var i, item, list, name, num, _i, _len, _ref, _ref1, _ref2;
 
       this.x = x;
       this.y = y;
@@ -23,8 +23,10 @@
         }
       }
       num = parseInt(list.length * Math.random());
-      name = list[num].view.name;
-      return new Creature(name, x, y).birth();
+      name = list != null ? (_ref1 = list[num]) != null ? (_ref2 = _ref1.view) != null ? _ref2.name : void 0 : void 0 : void 0;
+      if (name != null) {
+        return new Creature(name, x, y).birth();
+      }
     };
 
     creatureMaker.prototype.getCreatureListOnLocation = function(location) {

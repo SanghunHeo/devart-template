@@ -25,7 +25,14 @@
       var bound;
 
       this.view = SpriteFactory.get().makeSprite(this.config.view.name);
+      if (this.config.shadow) {
+        this.view.shadow = new createjs.Shadow("#000000", 10, 10, 0);
+      }
+      if (this.config.randomRotation) {
+        this.view.rotation = parseInt(Math.random() * 360);
+      }
       bound = this.view.getBounds();
+      console.log(this.view.shadow);
       this.view.regX = bound.width * this.config.reg.x;
       this.view.regY = bound.height * this.config.reg.y;
       this.view.setTransform(0, 0, -this.config.scale.xy, this.config.scale.xy);

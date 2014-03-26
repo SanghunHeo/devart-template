@@ -27,6 +27,7 @@
           y: 1 / 2
         },
         rotation: 0,
+        randomRotation: true,
         moveType: "movable",
         moveSpeed: .1,
         rotationType: true,
@@ -39,7 +40,8 @@
           restricted: true,
           from: "coast",
           to: "deepSea"
-        }
+        },
+        shadow: true
       };
       return this.config;
     }
@@ -92,7 +94,8 @@
         this.data = new DefaultUnitConfig();
         this.data.view.name = this.name;
         this.data.moveType = "fixed";
-        return this.data.view.animateType = "scale";
+        this.data.view.animateType = "scale";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -101,7 +104,8 @@
         this.data = new DefaultUnitConfig();
         this.data.view.name = this.name;
         this.data.moveType = "fixed";
-        return this.data.view.animateType = "scale";
+        this.data.view.animateType = "scale";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -138,7 +142,8 @@
         this.data = new DefaultUnitConfig();
         this.data.view.name = this.name;
         this.data.habitat.from = "field";
-        return this.data.habitat.to = "beach";
+        this.data.habitat.to = "beach";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -148,7 +153,8 @@
         this.data.view.name = this.name;
         this.data.habitat.from = "field";
         this.data.habitat.to = "beach";
-        return this.data.moveType = "fixed";
+        this.data.moveType = "fixed";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -158,7 +164,8 @@
         this.data.view.name = this.name;
         this.data.habitat.from = "field";
         this.data.habitat.to = "beach";
-        return this.data.moveType = "fixed";
+        this.data.moveType = "fixed";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -168,7 +175,8 @@
         this.data.view.name = this.name;
         this.data.habitat.from = "field";
         this.data.habitat.to = "beach";
-        return this.data.moveType = "fixed";
+        this.data.moveType = "fixed";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -178,7 +186,8 @@
         this.data.view.name = this.name;
         this.data.habitat.from = "field";
         this.data.habitat.to = "beach";
-        return this.data.moveType = "fixed";
+        this.data.moveType = "fixed";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -189,7 +198,8 @@
         this.data.habitat.from = "alpine";
         this.data.habitat.to = "field";
         this.data.moveType = "fixed";
-        return this.data.view.animateType = "scale";
+        this.data.view.animateType = "scale";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -200,7 +210,8 @@
         this.data.habitat.from = "alpine";
         this.data.habitat.to = "field";
         this.data.moveType = "fixed";
-        return this.data.view.animateType = "scale";
+        this.data.view.animateType = "scale";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -211,7 +222,8 @@
         this.data.habitat.from = "alpine";
         this.data.habitat.to = "field";
         this.data.moveType = "fixed";
-        return this.data.view.animateType = "scale";
+        this.data.view.animateType = "scale";
+        return this.data.shadow = false;
       },
       data: null
     }, {
@@ -222,7 +234,8 @@
         this.data.habitat.from = "alpine";
         this.data.habitat.to = "field";
         this.data.moveType = "fixed";
-        return this.data.view.animateType = "scale";
+        this.data.view.animateType = "scale";
+        return this.data.shadow = false;
       },
       data: null
     }
@@ -233,8 +246,6 @@
     item = _ref[i];
     item.constructor();
   }
-
-  console.log("start");
 
 }).call(this);
 

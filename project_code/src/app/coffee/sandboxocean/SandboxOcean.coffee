@@ -3,9 +3,11 @@ class SandboxOcean
 		@creatures = []
 		@stageSetup()
 		@inialize()
+		console.clear()
 		
 	stageSetup:()=>
 		@stage = new createjs.Stage("stage")
+		# @shadowContext = $("#shadow")[0].getContext('2d');
 		window.stage = @stage
 		createjs.Ticker.setFPS(30)
 		createjs.Ticker.addEventListener("tick", @update)
@@ -25,6 +27,8 @@ class SandboxOcean
 		window.depth = new Depth(depthMap)
 
 	update:()=>
-		@stage.update();
+		@stage.update()
+		# @shadowContext.clearRect(0,0,1024,768)
+		# @shadowContext.drawImage($("#stage")[0],10,10)
 
 window.SandboxOcean = SandboxOcean

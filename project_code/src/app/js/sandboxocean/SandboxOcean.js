@@ -12,6 +12,7 @@
       this.stageSetup = __bind(this.stageSetup, this);      this.creatures = [];
       this.stageSetup();
       this.inialize();
+      console.clear();
     }
 
     SandboxOcean.prototype.stageSetup = function() {

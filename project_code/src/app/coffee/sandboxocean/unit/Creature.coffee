@@ -9,7 +9,10 @@ class Creature
 
 	initView:()=>
 		@view = SpriteFactory.get().makeSprite(@config.view.name)
+		if @config.shadow then @view.shadow = new createjs.Shadow("#000000", 10, 10, 0)
+		if @config.randomRotation then @view.rotation = parseInt(Math.random() * 360)
 		bound = @view.getBounds()
+		console.log @view.shadow
 		@view.regX = bound.width*@config.reg.x
 		@view.regY = bound.height*@config.reg.y
 		@view.setTransform(0, 0, -@config.scale.xy, @config.scale.xy);

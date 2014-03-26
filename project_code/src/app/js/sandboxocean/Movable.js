@@ -5,6 +5,8 @@
 
   Movable = (function() {
     function Movable(parent) {
+      var _this = this;
+
       this.parent = parent;
       this.setRotation = __bind(this.setRotation, this);
       this.follow = __bind(this.follow, this);
@@ -14,12 +16,15 @@
       this.view = this.parent.view;
       this.pX = this.view.x;
       this.pY = this.view.y;
-      this.rotationSpeed = .2;
+      this.rotationSpeed = 1;
       this.followSpeed = .02;
       this.life = false;
       this.leader = new Leader(this.parent);
       createjs.Ticker.addEventListener("tick", this.loop);
       this.birth();
+      setTimeout(function() {
+        return _this.rotationSpeed = .2;
+      }, 1000);
     }
 
     Movable.prototype.birth = function() {

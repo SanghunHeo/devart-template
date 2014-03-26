@@ -10,8 +10,8 @@
       this.findSafeLocation = __bind(this.findSafeLocation, this);
       this.startInterval = __bind(this.startInterval, this);
       this.interval = __bind(this.interval, this);
-      this.startX = this.parent.view.x;
-      this.startY = this.parent.view.y;
+      this.startX = this.parent.view.x + Math.random() - .5;
+      this.startY = this.parent.view.y + Math.random() - .5;
       this.delayDefault = 1000;
       this.location = new Point(this.startX, this.startY);
       this.nextLocation = new Point(this.startX, this.startY);

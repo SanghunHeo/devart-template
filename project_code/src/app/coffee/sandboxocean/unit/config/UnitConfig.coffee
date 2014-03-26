@@ -54,6 +54,7 @@ class DefaultUnitConfig
 				x:2/3
 				y:1/2
 			rotation: 0
+			randomRotation: true
 			moveType: "movable" #fixed
 			moveSpeed: .1
 			rotationType: true
@@ -65,6 +66,7 @@ class DefaultUnitConfig
 				restricted: true
 				from: "coast"
 				to: "deepSea"
+			shadow:true
 		return @config
 
 window.DefaultUnitConfig = DefaultUnitConfig
@@ -113,6 +115,7 @@ window.creatureConfig = [
 			@data.view.name = @.name
 			@data.moveType = "fixed"
 			@data.view.animateType = "scale"
+			@data.shadow = false
 		data:null
 	}
 	{
@@ -122,6 +125,7 @@ window.creatureConfig = [
 			@data.view.name = @.name
 			@data.moveType = "fixed"
 			@data.view.animateType = "scale"
+			@data.shadow = false
 		data:null
 	}
 	{
@@ -162,6 +166,7 @@ window.creatureConfig = [
 			@data.view.name = @.name
 			@data.habitat.from = "field"
 			@data.habitat.to = "beach"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -173,6 +178,7 @@ window.creatureConfig = [
 			@data.habitat.from = "field"
 			@data.habitat.to = "beach"
 			@data.moveType = "fixed"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -184,6 +190,7 @@ window.creatureConfig = [
 			@data.habitat.from = "field"
 			@data.habitat.to = "beach"
 			@data.moveType = "fixed"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -195,6 +202,7 @@ window.creatureConfig = [
 			@data.habitat.from = "field"
 			@data.habitat.to = "beach"
 			@data.moveType = "fixed"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -206,6 +214,7 @@ window.creatureConfig = [
 			@data.habitat.from = "field"
 			@data.habitat.to = "beach"
 			@data.moveType = "fixed"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -218,6 +227,7 @@ window.creatureConfig = [
 			@data.habitat.to = "field"
 			@data.moveType = "fixed"
 			@data.view.animateType = "scale"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -230,6 +240,7 @@ window.creatureConfig = [
 			@data.habitat.to = "field"
 			@data.moveType = "fixed"
 			@data.view.animateType = "scale"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -242,6 +253,7 @@ window.creatureConfig = [
 			@data.habitat.to = "field"
 			@data.moveType = "fixed"
 			@data.view.animateType = "scale"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -254,6 +266,7 @@ window.creatureConfig = [
 			@data.habitat.to = "field"
 			@data.moveType = "fixed"
 			@data.view.animateType = "scale"
+			@data.shadow = false
 				
 		data:null
 	}
@@ -263,7 +276,6 @@ window.creatureConfig = [
 
 for item,i in window.creatureConfig
 	item.constructor()
-console.log "start"
 
 
 

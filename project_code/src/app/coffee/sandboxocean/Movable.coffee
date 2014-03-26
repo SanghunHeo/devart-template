@@ -3,12 +3,15 @@ class Movable
 		@view = @parent.view
 		@pX = @view.x
 		@pY = @view.y
-		@rotationSpeed = .2
+		@rotationSpeed = 1
 		@followSpeed = .02
 		@life = false
 		@leader = new Leader(@parent)
 		createjs.Ticker.addEventListener("tick", @loop);
 		@birth()
+		setTimeout ()=>
+					@rotationSpeed = .2
+				,1000
 
 	birth:() =>
 		@life = true
@@ -32,7 +35,6 @@ class Movable
 
 		if(diff_R < -180)then diff_R += 360
 		if(diff_R > 180)then diff_R -= 360
-
 
 		@view.rotation += diff_R * @rotationSpeed
 

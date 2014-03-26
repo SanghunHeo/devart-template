@@ -10,27 +10,10 @@ window.requestAnimFrame = (function() {
 window.onload = main;
 
 function main() {
-    // loadFiles(['vertex.shader', 'fragment.shader'], function(shaderText) {
-    //     var vertexShader = gl.createShader(gl.VERTEX_SHADER);
-    //     gl.shaderSource(vertexShader, shaderText[0]);
-    //     // ... compile shader, etc ...
-    //     var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
-    //     gl.shaderSource(fragmentShader, shaderText[1]);
-
-    //     // ... set up shader program and start render loop timer
-    // }, function(url) {
-    //     alert('Failed to download "' + url + '"');
-    // });
-
     image = window.depthMap;
     image.src = "img/grayscale_map.png"; // MUST BE SAME DOMAIN!!!
-
     image.onload = function() {
         render();
-        (function animloop() {
-            // requestAnimFrame(animloop);
-             // render();
-        })();
     }
 }
 
