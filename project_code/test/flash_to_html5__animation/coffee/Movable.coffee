@@ -2,13 +2,16 @@ class Movable
 	constructor:(@view) ->
 		@pX = @view.x
 		@pY = @view.y
-		@rotationSpeed = .03
+		@rotationSpeed = 1
 		@followSpeed = .01
 		@life = false
 		@leader = new Leader(@view.x,@view.y)
 
 		createjs.Ticker.addEventListener("tick", @loop);
 		@birth()
+		setTimeout 1000,()=>
+			@rotationSpeed = .03
+		console.log 1
 	birth:() =>
 		@life = true
 	death:() =>
@@ -33,5 +36,6 @@ class Movable
 		@view.rotation += diff_R * @rotationSpeed
 		@pX = @view.x
 		@pY = @view.y
+		console.log @rotationSpeed
 
 window.Movable = Movable

@@ -5,6 +5,8 @@
 
   Movable = (function() {
     function Movable(view) {
+      var _this = this;
+
       this.view = view;
       this.setRotation = __bind(this.setRotation, this);
       this.follow = __bind(this.follow, this);
@@ -13,12 +15,16 @@
       this.birth = __bind(this.birth, this);
       this.pX = this.view.x;
       this.pY = this.view.y;
-      this.rotationSpeed = .03;
+      this.rotationSpeed = 1;
       this.followSpeed = .01;
       this.life = false;
       this.leader = new Leader(this.view.x, this.view.y);
       createjs.Ticker.addEventListener("tick", this.loop);
       this.birth();
+      setTimeout(1000, function() {
+        return _this.rotationSpeed = .03;
+      });
+      console.log(1);
     }
 
     Movable.prototype.birth = function() {
@@ -53,7 +59,8 @@
       diff_R = end - start;
       this.view.rotation += diff_R * this.rotationSpeed;
       this.pX = this.view.x;
-      return this.pY = this.view.y;
+      this.pY = this.view.y;
+      return console.log(this.rotationSpeed);
     };
 
     return Movable;
@@ -63,3 +70,7 @@
   window.Movable = Movable;
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=Movable.map
+*/
