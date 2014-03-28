@@ -9,20 +9,6 @@ This project is upgrade version of sandbox ocean 2011. Main goal of new version 
 
 Below is description about early version. “Sandbox Ocean” is a multi-user interactive installation. Users collaborate in creating a dynamic and animated world by changing and shaping the topography of a sandbox. The interface is simple, intuitive and playful. Customizing Microsoft’s Kinect system, our project adds a new-media dimension to the playful sandbox of our childhood. “Sandbox Ocean” is an environment for collaborative creative play. The malleable sand interface fosters an activity that emphasizes mutual and collaborative play rather than competition. The physical interaction is intended to bring digital media back from the mediated world of the computer screen into the realm of tangible experience.
 
-
-## Major update:New mode - DEEP SEA
- * design of new Deep sea mode
- * key concept of deep sea mode is experience variety new creatures vivid fluorescent color tone world.
-![Image of sandbox ocean](project_images/post/common/deep-sea.jpg?raw=true "Image of sandbox ocean")
-
-## story board
-![Image of sandbox ocean](project_images/post/common/deepsee_sketch_1.png?raw=true "Image of sandbox ocean")
-![Image of sandbox ocean](project_images/post/common/deepsee_sketch_2.png?raw=true "Image of sandbox ocean")
-## creatures
-![Image of sandbox ocean](project_images/post/common/footballinkfishes.jpg?raw=true "Image of sandbox ocean")
-![Image of sandbox ocean](project_images/post/common/additional_unit1.jpg?raw=true "Image of sandbox ocean")
-
-
 ## Video & Images of old version
 [![ScreenShot](project_images/early version/video_screen_shot.png?raw=true)](http://vimeo.com/34409128)
 
@@ -33,7 +19,53 @@ Below is description about early version. “Sandbox Ocean” is a multi-user in
 ![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_02761.png?raw=true "Image of sandbox ocean")
 ![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_03197.jpg?raw=true "Image of sandbox ocean")
 ![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_04145.jpg?raw=true "Image of sandbox ocean")
-![Image of sandbox ocean](project_images/early version/6.jpg?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/early version/6.jpg?raw=true "Image of sandbox ocean")  
+## vision for new version
+1. experience sandbox ocean on the web browser as chrome app
+2. deep sea mode with various creatures
+
+## user scenarios
+1. install sandbox ocean chrome app.
+2. read description and watch the demo video.
+3. click try button then experience sandbox ocean on the browser
+4. If user is ready make own sandbox ocean
+
+
+***
+* ## Technical layout
+  * ## packaging as chrome web app
+  * ## web view side
+     * coffeescript
+        * using for neat and clean coding
+     * html5 - canvas
+     * easl.js
+        * using converted flash animation asset for easl.js
+     * webgl(GLSL)
+        * use webgl shader for fast pixel modification
+     * socket.io
+        * to connect socket with local server and transfer depth data
+  * ## local server side
+     * node.js
+     * libfreenect
+     * node png
+     * kinect-depth
+     * node static
+     
+## DEEP SEA mode
+ * design of new Deep sea mode
+ * key concept of deep sea mode is experience variety new creatures vivid fluorescent color tone world.
+![Image of sandbox ocean](project_images/post/common/deep-sea.jpg?raw=true "Image of sandbox ocean")
+
+## story board
+![Image of sandbox ocean](project_images/post/common/deepsee_sketch_1.png?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/post/common/deepsee_sketch_2.png?raw=true "Image of sandbox ocean")
+## new creatures
+football fish and squid
+![Image of sandbox ocean](project_images/post/common/footballinkfishes.jpg?raw=true "Image of sandbox ocean")
+![Image of sandbox ocean](project_images/post/common/additional_unit1.jpg?raw=true "Image of sandbox ocean")
+
+
+
 
 ## what we've done now
  * make new design concept image & sketch
