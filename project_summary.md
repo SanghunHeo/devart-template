@@ -10,8 +10,8 @@ This project is upgrade version of sandbox ocean 2011. Main goal of new version 
 Below is description about early version. “Sandbox Ocean” is a multi-user interactive installation. Users collaborate in creating a dynamic and animated world by changing and shaping the topography of a sandbox. The interface is simple, intuitive and playful. Customizing Microsoft’s Kinect system, our project adds a new-media dimension to the playful sandbox of our childhood. “Sandbox Ocean” is an environment for collaborative creative play. The malleable sand interface fosters an activity that emphasizes mutual and collaborative play rather than competition. The physical interaction is intended to bring digital media back from the mediated world of the computer screen into the realm of tangible experience.
 
 
-
-## design of new Deep sea mode
+## Major update:New mode - DEEP SEA
+ * design of new Deep sea mode
  * key concept of deep sea mode is experience variety new creatures vivid fluorescent color tone world.
 ![Image of sandbox ocean](project_images/post/common/deep-sea.jpg?raw=true "Image of sandbox ocean")
 
