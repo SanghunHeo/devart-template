@@ -35,13 +35,12 @@ Below is description about early version. “Sandbox Ocean” is a multi-user in
 ![Image of sandbox ocean](project_images/early version/Sandbox Ocean_1080p 1231_04145.jpg?raw=true "Image of sandbox ocean")
 ![Image of sandbox ocean](project_images/early version/6.jpg?raw=true "Image of sandbox ocean")
 
-## Wrapping html&javascript code with Chrome Apps
-still working...
-```
-function working() {
-  console.log("Working very hard please wait...");
-}
-```
+## what we've done now
+ * make new design concept image & sketch
+ * chrome app design
+ * basic working demo application
+  * chrome app ( running on development mode )
+  * node application server connected to kinect
 
 ## Links to External Libraries
  * kinect driver code
