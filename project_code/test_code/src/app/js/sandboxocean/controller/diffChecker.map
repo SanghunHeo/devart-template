@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "diffChecker.js",
+  "sourceRoot": "../../../coffee/sandboxocean/controller",
+  "sources": [
+    "diffChecker.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA,KAAA;;CAAA,CAAM;CACO,EAAA,CAAA,iBAAA;;CAAZ;;CADD;;CAAA,CAGA,CAAqB,GAAf,KAAN;CAHA"
+}

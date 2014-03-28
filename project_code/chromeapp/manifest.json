@@ -1,0 +1,28 @@
+{
+    "name": "Sandbox Ocean",
+    "description": "This project is upgrade version of sandbox ocean 2011. Main goal of new version is to expend experience of sandbox ocean to world on web browser through chrome web apps. Because of it will running on the chrome web browser, anybody who have kinect and willing to experience it would make it real. We also consider that even people who don't have appropriate device, can experience sandbox ocean using mouse and keyboard. Furthermore we added 'Deep sea' mode which is represent world of deep sea. It can provide new experience with deep sea creatures like viper fish giant octopus.",
+    "version": "2.0.0",
+    "manifest_version": 2,
+    "default_locale": "en",
+    "permissions": [
+        {
+            "socket": [
+                "tcp-listen:*:*",
+                "tcp-connect:*:*"
+            ]
+        },
+        "fullscreen",
+        "<all_urls>"
+    ],
+    "icons": {
+        "16": "images/icon-16.png",
+        "128": "images/icon-128.png"
+    },
+    "app": {
+        "background": {
+            "scripts": [
+                "scripts/main.js"
+            ]
+        }
+    }
+}

@@ -1,0 +1,137 @@
+<!-- Licensed under a BSD license. See license.html for license -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sandbox Ocean</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="socket.io-client/dist/socket.io.min.js"></script>
+    <!-- vertex shader -->
+    <script id="2d-vertex-shader" type="x-shader/x-vertex">
+        attribute vec2 a_position;
+        attribute vec2 a_texCoord;
+
+        uniform vec2 u_resolution;
+
+        varying vec2 v_texCoord;
+
+        void main() {
+            // convert the rectangle from pixels to 0.0 to 1.0
+            vec2 zeroToOne = a_position / u_resolution;
+
+            // convert from 0->1 to 0->2
+            vec2 zeroToTwo = zeroToOne * 2.0;
+
+            // convert from 0->2 to -1->+1 (clipspace)
+            vec2 clipSpace = zeroToTwo - 1.0;
+
+            gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
+
+            // pass the texCoord to the fragment shader
+            // The GPU will interpolate this value between points.
+            v_texCoord = a_texCoord;
+        }
+    </script>
+    </script>
+    <!-- fragment shader -->
+    <script id="2d-fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        // our texture
+        uniform sampler2D u_image;
+
+        // the texCoords passed in from the vertex shader.
+        varying vec2 v_texCoord;
+        vec4 color1 = vec4(0.2627450980392157, 0.4666666666666667, 0.08235294117647059, 1.0);
+        vec4 color2 = vec4(0.6039215686274509, 0.6745098039215687, 0.2235294117647059, 1.0);
+        vec4 color3 = vec4(0.8, 0.807843137254902, 0.47843137254901963, 1.0);
+        vec4 color4 = vec4(1.0, 1.0, 1.0, 1.0);
+        vec4 color5 = vec4(0.39215686274509803, 0.788235294117647, 1.0, 1.0);
+        vec4 color6 = vec4(0.23921568627450981, 0.6039215686274509, 0.7176470588235294, 1.0);
+        vec4 color7 = vec4(0, 0.41568627450980394, 0.5803921568627451, 1.0);
+        vec4 colorBlack = vec4(0, 0, 0, 1.0);
+
+        float height1 = .1;
+        float height2 = .2;
+        float height3 = .4;
+        float height4 = .5;
+        float height5 = .6;
+        float height6 = .8;
+        float height7 = 1.0;
+
+        void main() {
+            vec4 origin = texture2D(u_image, v_texCoord);
+            float height = origin[0];   // r
+            float near = origin[1];    // g
+            float far = origin[2];     // b
+
+            if ( near > 0.0 ) gl_FragColor = colorBlack;
+            else if ( far > 0.0 ) gl_FragColor = color7;
+            else if (height < height1) gl_FragColor = color1;
+            else if (height >= height1 && height < height2) gl_FragColor = color2;
+            else if (height >= height2 && height < height3) gl_FragColor = color3;
+            else if (height >= height3 && height < height4) gl_FragColor = color4;
+            else if (height >= height4 && height < height5) gl_FragColor = color5;
+            else if (height >= height5 && height < height6) gl_FragColor = color6;
+            else if (height >= height6 && height <= height7) gl_FragColor = color7;
+        }
+    </script>
+</head>
+
+<body style="">
+    <div="wrapper" style="width:1024px;height:768px;position:absolute;overflow:hidden;background:black;left:50%;margin-left:-512px;">
+        <canvas id="canvas" width="1024" height="768" style="position:absolute;top:0px;left:0px;-webkit-filter: blur(20px);"></canvas>
+        <canvas id="shadow" width="1024" height="768" style="position:absolute;top:0px;left:0px;-webkit-filter: brightness(-1) blur(3px);"></canvas>
+        <canvas id="stage" width="1024" height="768" style="position:absolute;top:0px;left:0px"></canvas>
+    </div>
+    <!-- begin of scripts -->
+    <script src="js/vendor/TweenMax.min.js"></script>
+    <script src="js/vendor/createjs-2013.12.12.min.js"></script>
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="js/vendor/socket.io.min.js"></script>
+
+    <script src="js/sandboxocean/view/creatures/fish01.js"></script>
+    <script src="js/sandboxocean/view/creatures/fish02.js"></script>
+    <script src="js/sandboxocean/view/creatures/fish03.js"></script>
+    <script src="js/sandboxocean/view/creatures/fish04.js"></script>
+    <script src="js/sandboxocean/view/creatures/fish05.js"></script>
+    <script src="js/sandboxocean/view/creatures/shark.js"></script>
+    <script src="js/sandboxocean/view/creatures/whale.js"></script>
+    <script src="js/sandboxocean/view/creatures/turtle.js"></script>
+    <script src="js/sandboxocean/view/creatures/coral01.js"></script>
+    <script src="js/sandboxocean/view/creatures/coral02.js"></script>
+    <script src="js/sandboxocean/view/creatures/starfish01.js"></script>
+    <script src="js/sandboxocean/view/creatures/starfish02.js"></script>
+    <script src="js/sandboxocean/view/creatures/starfish03.js"></script>
+    <script src="js/sandboxocean/view/creatures/shellfish01.js"></script>
+    <script src="js/sandboxocean/view/creatures/tree01.js"></script>
+    <script src="js/sandboxocean/view/creatures/tree02.js"></script>
+    <script src="js/sandboxocean/view/creatures/tree03.js"></script>
+    <script src="js/sandboxocean/view/creatures/tree04.js"></script>
+    <script src="js/sandboxocean/view/creatures/jellyfish01.js"></script>
+    <script src="js/sandboxocean/view/creatures/crab01.js"></script>
+    <script src="js/sandboxocean/unit/config/UnitConfig.js"></script>
+    <script src="js/sandboxocean/controller/creatureMaker.js"></script>
+    <script src="js/sandboxocean/controller/LocationChecker.js"></script>
+    <script src="js/sandboxocean/controller/depth.js"></script>
+    <script src="js/sandboxocean/Point.js"></script>
+    <script src="js/sandboxocean/Leader.js"></script>
+    <script src="js/sandboxocean/Movable.js"></script>
+    <script src="js/sandboxocean/unit/Creature.js"></script>
+    <script src="js/sandboxocean/controller/SpriteFactory.js"></script>
+    <script src="js/sandboxocean/SandboxOcean.js"></script>
+
+    <script src="js/webgl-utils.js"></script>
+    <script src="js/shader/shader.js"></script>
+    <script src="js/shader/shader-main.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/socket/socket.js"></script>
+    <!-- end of scripts -->
+</body>
+</body>
+</html>
