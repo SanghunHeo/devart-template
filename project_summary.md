@@ -33,6 +33,7 @@ Below is description about early version. “Sandbox Ocean” is a multi-user in
 
 ***
 * ## Technical layout
+  * previous version was made with flash actionscript and running on flash player. But now every code is running on web browser. Because I beleve web browser is one of the most excellent plat form for media art. I re write every as3 code to html5(javascript and html css3) and it wrapping up as chrome app. User can install this app on their own desktop using internet. Now user could make their own sandbox ocean if they want. We make install guide page and user can use it. If user don't have kinect and sand box, then still they can make sandbox ocean with mouse. We will update
   * ## packaging as chrome web app
   * ## web view side
      * coffeescript
